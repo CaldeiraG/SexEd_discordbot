@@ -9,8 +9,9 @@
   "author": "CaldeiraG",
   "license": "MIT",
   "dependencies": {
-    "discord.js": "^11.6.4",
-    "eslint": "^6.8.0"
+    "discord.js": "^12.2.0",
+    "eslint": "^7.1.0",
+    "npm-check-updates": "^6.0.1"
   },
   "repository": {
     "type": "git",
