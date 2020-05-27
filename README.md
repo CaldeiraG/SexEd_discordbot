@@ -1,1 +1,3 @@
-# cg-discordbot
+# Sex Education Discord Bot
+
+WIP
