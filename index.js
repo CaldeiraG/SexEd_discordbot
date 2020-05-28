@@ -2,14 +2,15 @@ const fs = require('fs');
 const Discord = require('discord.js');
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
+require('dotenv').config();
 
-const { prefix, token } = require('./config.json');
+//const {prefix} = require('./config.json');
 
 client.once('ready', () => {
 	console.log('Ready!');
 });
 
-client.login(token);
+client.login(process.env.DISCORD_TOKEN);
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
@@ -21,7 +22,7 @@ for (const file of commandFiles) {
 
 client.on('message', message => {
 
-	const args = message.content.slice(prefix.length).split(/ +/);
+	const args = message.content.slice(process.env.PREFIX.length).split(/ +/);
 	const commandName = args.shift().toLowerCase();
 
 	if (!client.commands.has(commandName)) return;
